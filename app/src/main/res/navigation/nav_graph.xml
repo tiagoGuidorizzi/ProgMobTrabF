@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/menuFragment">
+    <fragment
+        android:id="@+id/candidatarFragment"
+        android:name="com.example.trab_final.CandidatarFragment"
+        android:label="Candidatar"
+        tools:layout="@layout/fragment_candidatar" >
+        <action
+            android:id="@+id/action_candidatarFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.example.trab_final.MenuFragment"
+        android:label="Menu"
+        tools:layout="@layout/activity_main">
+        <action
+            android:id="@+id/action_menuFragment_to_candidatarFragment"
+            app:destination="@id/candidatarFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_candidaturasFragment"
+            app:destination="@id/candidaturasFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_minhasCandidaturasFragment"
+            app:destination="@id/minhasCandidaturasFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/candidaturasFragment"
+        android:name="com.example.trab_final.CandidaturasFragment"
+        android:label="Vagas">
+        <action
+            android:id="@+id/action_candidaturasFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/minhasCandidaturasFragment"
+        android:name="com.example.trab_final.MinhasCandidaturasFragment"
+        android:label="Minhas Candidaturas">
+        <action
+            android:id="@+id/action_minhasCandidaturasFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/action_minhasCandidaturasFragment_to_editarCandidaturaFragment"
+            app:destination="@id/editarCandidaturaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editarCandidaturaFragment"
+        android:name="com.example.trab_final.EditarCandidaturaFragment"
+        android:label="Editar">
+        <action
+            android:id="@+id/action_editarCandidaturaFragment_to_minhasCandidaturasFragment"
+            app:destination="@id/minhasCandidaturasFragment" />
+    </fragment>
+</navigation>
